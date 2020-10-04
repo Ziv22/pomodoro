@@ -4,6 +4,7 @@ import Clock from "./components/Clock"
 import Navbar from "./components/Navbar"
 import ActionRow from "./components/ActionRow"
 import AdjustRow from "./components/AdjustRow"
+import MusicRow from './components/MusicRow'
 
 export class App extends Component {
   constructor(){
@@ -95,7 +96,6 @@ export class App extends Component {
       <div className="container">
         <div className="timeSection">
           <Navbar changeMode={this.changeMode} isWorkMode={this.state.isWorkMode}/>
-          {/* <div> */}
               <h1 className="header">
                   <span class="char1">P</span>
                   <span class="char2">O</span>
@@ -105,14 +105,13 @@ export class App extends Component {
                   <span class="char6">O</span>
                   <span class="char7">R</span>
                   <span class="char8">O</span>
-
               </h1>
-          {/* </div> */}
-          {/* <h1 className="header">Pomodoro</h1> */}
-
           <Clock minutes={this.state.minutes} seconds={this.state.seconds}/>
           <AdjustRow isWorkMode={this.state.isWorkMode} AdjustTime={this.AdjustTime}/>
           <ActionRow currentAction={this.state.isActive ? "Pause" : "Start"} resetClicked={this.reset} activateAction={this.state.isActive ? this.pause : this.start}/>
+        </div>
+        <div>
+          <MusicRow/>
         </div>
       </div>
     )
